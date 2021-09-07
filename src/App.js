@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button } from "./components/Button";
+import Card from "./components/Card";
+import Col from "./components/Col";
+import Input from "./components/Input";
+import Row from "./components/Row";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Row justify="space-between" align="center" style={{ height: "200px" }}>
+        <Col span={6}>
+          <Button color="secondary">Save changes</Button>
+        </Col>
+        <Col span={6}>
+          <Button color="primary" rounded>
+            test
+          </Button>
+        </Col>
+      </Row>
+      <Row>
+        <Col span={6}>
+          <Card>
+            <Input color="secondary" placeholder="Username" />
+            <Row gutter={2}>
+              <Col>
+                <Input color="secondary" placeholder="Username" />
+              </Col>
+              <Col>
+                <Input color="secondary" placeholder="Username" />
+              </Col>
+            </Row>
+            <Row justify="end" gutter={1}>
+              <div>
+                <Button>Cancel</Button>
+              </div>
+              <div>
+                <Button color="secondary">Save</Button>
+              </div>
+            </Row>
+          </Card>
+        </Col>
+      </Row>
     </div>
   );
 }
